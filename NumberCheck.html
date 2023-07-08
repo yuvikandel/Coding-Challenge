@@ -1,0 +1,27 @@
+<html>
+<head>
+    <script>
+    </script>
+</head>
+<body>
+    <div style="margin: 20%;">
+    <form action="">
+    <fieldset>
+    <label for="num">Enter a positive number:</label><br>
+    <input type="number" id="num" name="num" placeholder="Enter here!">
+    <input onclick="numberCheck()" type="submit" value="Submit!">
+    </fieldset>
+    </form>
+    </div>
+    <script>
+        function numberCheck() {
+            var number = document.getElementById("num").value
+            if (number % 2 == 0) {
+                alert('Your output is even')
+            } else {
+                alert('Your output is odd')
+            }
+        }      
+    </script>
+</body>
+</html>
