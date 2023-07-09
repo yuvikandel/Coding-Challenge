@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Prime Number Check</title>
+</head>
+<body>
+    <div style="margin: 20%;">
+    <form action="">
+    <fieldset>
+    <label for="num">Enter a positive number:</label><br>
+    <input type="number" id="num" name="num" placeholder="Enter here!">
+    <input onclick="primeCheck()" type="submit" value="Submit!">
+    </fieldset>
+    </form>
+    </div>
+    <script>
+        function primeCheck() {
+            var number = document.getElementById("num").value
+            let isPrime = true;
+            if (number === 1) {
+                console.log("Your number is not prime");
+            } else if (number > 1) {
+                for (let i = 2; i < number; i++) {
+                    if (number % i == 0) {
+                        isPrime = false;
+                        break;
+            }
+        }
+        if (isPrime) {
+            alert('Your number is prime');
+        } else {
+            alert('Your number is not prime');
+        }
+    } 
+}
+    </script>
+</body>
+</html>
