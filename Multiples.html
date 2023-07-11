@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Multiples</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Caprasimo&family=Fasthand&family=Montserrat:ital,wght@1,100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>What would your number's times table look like?</h1>
+    <h3>In this document, you can input a number and that number multiplied by numbers 0-10 will get printed.</h3>
+    <div style="margin: 18%; margin-top: 100px;">
+    <form onsubmit="numMultiples()">
+    <fieldset>
+    <label for="num">Enter your favorite number:</label><br>
+    <input type="number" id="num" name="num" placeholder="Enter here!">     <!--creating a form-->
+    <button onclick="numMultiples()" type="button" value="Submit!">Click!</button>
+    </fieldset>
+    </form>
+    <p id="Display">The output is here: </p>
+    </div>
+    <script>
+        function numMultiples() {
+            var number = document.getElementById("num").value   //getting the id from the html form
+            let multiples = []   //creating new list to add numbers into
+            for(let i=0;i<=10;i++){
+                multiples.push(number*i)
+                var a  = number*i
+                var m = number + " x " + i + ' = ' + a;
+                document.getElementById("Display").innerHTML += "<br>" + m;
+                num = a
+                console.log( number + " x " + i + ' = ' + a)
+            }
+            let i = "" + number     //converting number into string
+        }
+    </script>
+</body>
+</html>
