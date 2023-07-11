@@ -1,0 +1,40 @@
+body {
+    background-color: thistle;
+    background-image: url('transparentbutterflies.png');
+}
+
+h1 {
+    margin-left: 19.5%;
+    margin-top: 5%;
+    color: snow;
+    font-family: Fasthand;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+    margin-left: 10%;
+    color: rgb(199, 153, 195);
+    font-family: 'Caprasimo', cursive;
+}
+
+p {
+    margin-left: 44%;
+    font-family: 'Amatic SC', cursive;
+    font-size: 20px;
+}
+
+label {
+    font-family: 'Fasthand', cursive;
+    font-size: 30px;
+}
+
+input {
+    font-family: 'Caprasimo', cursive;
+}
+
+button {
+    background-color: rgb(200, 136, 186);
+    font-family: 'Montserrat', cursive;
+    color: rgb(49, 6, 46);
+    font-weight: bold;
+}
