@@ -4,7 +4,6 @@ body {
 }
 
 h1 {
-    margin-left: 19.5%;
     margin-top: 5%;
     color: snow;
     font-family: Fasthand;
@@ -12,15 +11,14 @@ h1 {
 }
 
 h3 {
-    margin-left: 10%;
     color: rgb(199, 153, 195);
     font-family: 'Caprasimo', cursive;
 }
 
 p {
-    margin-left: 44%;
     font-family: 'Amatic SC', cursive;
     font-size: 20px;
+    font-weight: bolder;
 }
 
 label {

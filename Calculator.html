@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Caprasimo&family=Fasthand&family=Montserrat:ital,wght@1,100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 style="margin-left: 37%;">Need a calculator?</h1>
+    <h3 style="margin-left: 2%;">In this document, you can input two numbers and select the operation you want done. After clicking submit, your answer will be printed.</h3>
+    <div style="margin: 18%; margin-top: 100px;">
+    <form onsubmit="calculator()">
+    <fieldset>
+    <label for="num">Enter your numbers and operation:</label><br>
+    <input type="number" id="num1" name="num1" placeholder="Num 1">     <!--creating a form-->
+    <select name="op" id="op" dropdown>
+        <option id="add">+</option>
+        <option id="sub">-</option>
+        <option id="mul">x</option>
+        <option id="div">÷</option>
+      </select>
+    <input type="number" id="num2" name="num2" placeholder="Num 2">
+    <button onclick="calculator()" type="button" value="Submit!">Submit!</button>
+    </fieldset>
+    </form>
+    <p id="Display" style="margin-left: 44%;">The output is here: </p>
+    </div>
+    <script>
+        function calculator() {
+            var number1 = document.getElementById("num1").value
+            var number2 = document.getElementById("num2").value   //getting the id from the html form
+            var add = document.getElementById("add").value
+            var sub = document.getElementById("sub").value
+            var mul = document.getElementById("mul").value
+            var div = document.getElementById("div").value
+            var op = document.getElementById("op").value
+            var x = Number(number1)
+            var y = Number(number2)
+            if (op == add) {
+                add = x + y
+                a = "" + add
+                document.getElementById("Display").innerHTML += "<br>" + a;
+            } else if (op == sub) {
+                sub = x - y
+                b = "" + sub
+                document.getElementById("Display").innerHTML += "<br>" + b;
+            } else if (op == mul) {
+                mul = x * y
+                c = "" + mul
+                document.getElementById("Display").innerHTML += "<br>" + c;
+            } else {
+                div = x / y
+                d = "" + div
+                document.getElementById("Display").innerHTML += "<br>" + d;
+            }
+        }
+    </script>
+</body>
+</html>
