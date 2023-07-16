@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Caprasimo&family=Fasthand&family=Montserrat:ital,wght@1,100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 style="margin-left: 17%; font-size: 100px;">What's the time?</h1>
+    <p id="Display" style="margin-left: 20%; font-size: 150px;"></p>
+    <script>
+        function time() {
+            var x = new Date()
+            var mon = x.getMonth() + 1
+            var day = x.getDate()
+            var z = x.getFullYear()
+            var hr = x.getHours()
+            if (hr > 12) {
+                hr = hr - 12
+            } else {
+                hr = hr
+            }
+            document.getElementById("Display").innerHTML += hr + ":" + x.getMinutes() + ", " + mon + " - " + day + " - " + z
+        }
+        time();
+    </script>
+</body>
+</html>
