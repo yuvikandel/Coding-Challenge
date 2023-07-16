@@ -7,9 +7,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Caprasimo&family=Fasthand&family=Montserrat:ital,wght@1,100&display=swap" rel="stylesheet">
 </head>
-<body>
+<body style="background-color: rgb(168, 169, 247); background-image: none;">
     <h1 style="margin-left: 17%; font-size: 100px;">What's the time?</h1>
-    <p id="Display" style="margin-left: 20%; font-size: 150px;"></p>
+    <p id="Display" style="margin-left: 16%; font-size: 150px;"></p>
     <script>
         function time() {
             var x = new Date()
@@ -17,12 +17,13 @@
             var day = x.getDate()
             var z = x.getFullYear()
             var hr = x.getHours()
+            var sec = x.getSeconds()
             if (hr > 12) {
                 hr = hr - 12
             } else {
                 hr = hr
             }
-            document.getElementById("Display").innerHTML += hr + ":" + x.getMinutes() + ", " + mon + " - " + day + " - " + z
+            document.getElementById("Display").innerHTML += hr + ":" + x.getMinutes() + ":" + sec + ", " + mon + " - " + day + " - " + z
         }
         time();
     </script>
