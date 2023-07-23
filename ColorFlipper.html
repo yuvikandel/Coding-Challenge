@@ -1,0 +1,43 @@
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Canvas</title>
+<script type="text/javascript">
+    function start() {
+        var canvas = document.getElementById('canvas');
+        if (canvas.getContext) {
+            var ctx = canvas.getContext('2d');
+            canvas.setAttribute('width', window.innerWidth);
+            canvas.setAttribute('height', window.innerHeight);
+            ctx.fillStyle = "black";
+            ctx.fillRect(0,0,canvas.width,canvas.height);
+        }
+    }
+    function randomize() {
+        var num = Math.floor(Math.random()*100)
+        var canvas = document.getElementById('canvas');
+        if (canvas.getContext) {
+            var ctx = canvas.getContext('2d');
+            canvas.setAttribute('width', window.innerWidth);
+            canvas.setAttribute('height', window.innerHeight);
+            var num1 = Math.floor(Math.random()*255)
+            var num2 = Math.floor(Math.random()*255)
+            var num3 = Math.floor(Math.random()*255)
+            ctx.fillStyle = "rgb(" + num1 + "," + num2 + "," + num3 + ")";
+            ctx.fillRect(0,0,canvas.width,canvas.height);
+            var color1 = "" + num1
+            var color2 = "" + num2
+            var color3 = "" + num3
+            var colors = "rgb(" + num1 + ", " + num2 + ", " + num3 + ")"
+            document.getElementById("h2").innerHTML = colors
+        }
+    }
+</script>
+</head>
+<body onload="start()">
+    <h1 style="color:white; z-index: 2; position: absolute; left: 27%; font-size: 100px;">Color Flipper</h1>
+    <h2 id="h2" style="color:white; z-index: 2; position: absolute; right: 38.5%; top: 32%; font-size: 30px;">Background Color</h2>
+    <canvas id="canvas" style="z-index: 1; position: relative;"></canvas>
+    <button onclick="randomize()" style="z-index:2; position: fixed; top: 50%; left: 45%; color: aliceblue; background-color: black; height: 50px; width: 120px;" type="button">Change Color!</button>
+</body>
+</html>
