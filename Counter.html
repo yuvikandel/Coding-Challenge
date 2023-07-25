@@ -1,0 +1,43 @@
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Canvas</title>
+<script type="text/javascript">
+    var num = 0;
+    function start() {
+        num = 0;
+        document.getElementById("h2").innerHTML = num;
+        document.getElementById("h2").style.color="white";
+    }
+    function add() {
+        num = num + 1
+        document.getElementById("h2").innerHTML = num;
+        if (num < 0) {
+            document.getElementById("h2").style.color="lightpink";
+        } else if (num > 0) {
+            document.getElementById("h2").style.color="dodgerblue";
+        } else {
+            document.getElementById("h2").style.color="white";
+        }
+    }
+    function sub() {
+        num = num - 1
+        document.getElementById("h2").innerHTML = num;
+        if (num < 0) {
+            document.getElementById("h2").style.color="lightpink";
+        } else if (num > 0) {
+            document.getElementById("h2").style.color="dodgerblue";
+        } else {
+            document.getElementById("h2").style.color="white";
+        }
+    }
+    </script>
+</head>
+<body style="background-color: cornflowerblue;" onload="start()">
+    <h1 style="color:white; margin-left: 36.5%; margin-top: 5%; font-size: 100px; font-family: fantasy;">Counter</h1>
+    <h2 id="h2" style="text-align: center; margin-top: 5%; font-size: 70px; font-family: fantasy;">0</h2>
+    <button onclick="start()" style="position: fixed; top: 50%; left: 45%; color: aliceblue; background-color: rgb(86, 88, 188); height: 50px; width: 120px; font-size: 30px; font-family: fantasy;" type="button">Reset</button>
+    <button onclick="add()" style="position: fixed; top: 50%; left: 55%; color: aliceblue; background-color: rgb(86, 88, 188); height: 50px; width: 120px; font-size: 30px;" type="button">+</button>
+    <button onclick="sub()" style="position: fixed; top: 50%; left: 35%; color: aliceblue; background-color: rgb(86, 88, 188); height: 50px; width: 120px; font-size: 30px;" type="button">-</button>
+</body>
+</html>
