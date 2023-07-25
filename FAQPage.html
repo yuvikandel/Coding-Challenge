@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0">   
+    <link rel="stylesheet" href=
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity=
+    "sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background-color: rgb(152, 169, 231);
+        }
+        .container {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -20%);
+            width: 60%;
+        }
+  
+        h1 {
+            text-align: center;
+            font-family: fantasy;
+            font-size: 40px;
+            color: white;
+        }
+  
+        li {
+            list-style: none;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-bottom: 2px solid #ffffff;
+            color: aliceblue;
+            background-color: #6b63c2;
+        }
+  
+        .question {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            position: relative;
+        }
+  
+        .space {
+            position: absolute;
+            right: 0px;
+            cursor: pointer;
+        }
+  
+        .non-click {
+            display: none;
+        }
+  
+        .answer {
+            font-size: 17px;
+        }
+    </style>
+    <title>FAQs</title>
+</head>
+  
+<body>
+    <div class="container">
+        <h1>FAQs</h1>
+        <ul>
+            <li class="faq">
+                <div class="question">
+                    How many ounces are in a cup?
+                    <span class="space">
+                        <i class="fa-solid fa-plus"></i>
+                    </span>
+                </div>
+                <div class="answer non-click">
+                    There are 8 fluid ounces in a cup
+                </div>
+            </li>
+            <li class="faq">
+                <div class="question">
+                    How many feet are in a mile?
+                    <span class="space">
+                        <i class="fa-solid fa-plus"></i>
+                    </span>
+                </div>
+                <p class="answer non-click">
+                    There are 5280 feet in one mile
+                </p>
+            </li>
+            <li class="faq">
+                <div class="question">
+                    How many weeks are in a year?
+                    <span class="space">
+                        <i class="fa-solid fa-plus"></i>
+                    </span>
+                </div>
+                <p class="answer non-click">
+                    There are about 52 weeks in one year
+                </p>
+            </li>
+            <li class="faq">
+                <div class="question">
+                    When is Mother's Day?
+                    <span class="space">
+                        <i class="fa-solid fa-plus"></i>
+                    </span>
+                </div>
+                <p class="answer non-click">
+                    Mother's Day is celebrated on the second Sunday of May
+                </p>
+            </li>
+            <li class="faq">
+                <div class="question">
+                    Who are the best TSITP characters?
+                    <span class="space">
+                        <i class="fa-solid fa-plus"></i>
+                    </span>
+                </div>
+                <p class="answer non-click">
+                    In my opinion... Steve-o and Shayla
+                </p>
+  
+            </li>
+        </ul>
+    </div>
+    <script>
+        const faqs = document.querySelectorAll(".faq");
+        for (const item of faqs) {
+            const curr_faq = item.childNodes;
+            console.log(curr_faq);
+            const question = curr_faq[1];
+            const answer = curr_faq[3];
+            const icon = question.querySelector(".space");
+            icon.addEventListener("click", function () {
+                answer.classList.toggle("non-click");
+                const i = icon.querySelector("i");
+                i.classList.toggle("fa-xmark");
+                i.classList.toggle("fa-plus");
+            });
+        }
+    </script>
+</body>
+  
+</html>
