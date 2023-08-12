@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Timer</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Caprasimo&family=Fasthand&family=Montserrat:ital,wght@1,100&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: rgb(168, 169, 247); background-image: none;" onload="time()">
+    <h1 style="text-align: center; font-size: 100px;">Set a timer!</h1>
+    <p id="p" style="text-align: center; font-size: 40px;"></p>
+    <p id="Display" style="text-align: center; font-size: 150px;"></p>
+    <script>
+        function time() {
+            var x = new Date()
+            var hr = x.getHours()
+            var min = x.getMinutes()
+            document.getElementById("Display").innerHTML = hr + ":" + min;
+        }
+        function alarm() {
+            var y = new Date()
+            let hour = "" + y.getHours();
+            let minutes = "" + y.getMinutes();
+            let time = hour + ":" + minutes
+            var alarm = prompt("Set an alarm (num only ex. 5): ")
+            var unit = prompt("Choose a time unit (Minutes or Hours, no caps)")
+            document.getElementById("Display").innerHTML = time;
+            if (unit == "minutes") {
+                var seconds = alarm * 60 * 1000
+                document.getElementById("p").innerHTML = "Timer set for " + alarm + " " + unit;
+                setTimeout(function () { 
+                    var audio = new Audio('siren.mp4');
+                    audio.play();
+                    document.getElementById("Display").innerHTML = time;
+                    document.getElementById("p").innerHTML = ""; }, seconds)
+            } else if (unit == "hours") {
+                var seconds = alarm * 60 * 60 * 1000
+                document.getElementById("p").innerHTML = "Timer set for " + alarm + " " + unit;
+                setTimeout(function () {
+                    var audio = new Audio('siren.mp4');
+                    audio.play();
+                    document.getElementById("Display").innerHTML = time;
+                    document.getElementById("p").innerHTML = ""; }, seconds)
+            } else {
+                alert("Sorry, try again")
+            }
+            
+        }
+    </script>
+    <button onclick="alarm()" type="button" style="margin-left: 47%; margin-top: -35%;"> Set Alarm</button>
+</body>
+</html>
